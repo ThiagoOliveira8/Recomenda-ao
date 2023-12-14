@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Editar Perfil</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1>Editar Perfil</h1>
+        <form method="POST" action="/edit_profile?user_id={{ user_id }}">
+            <label for="film_genre">Gênero de filme favorito:</label>
+            <select class="inputglb" name="film_genre" required>
+                <option value="Action">Ação</option>
+                <option value="Comedy">Comédia</option>
+                <option value="Drama">Drama</option>
+                <!-- Adicione mais gêneros conforme necessário -->
+            </select>
+            <br>
+            <label for="music_genre">Gênero de música favorito:</label>
+            <select class="inputglb" name="music_genre" required>
+                <option value="Pop">Pop</option>
+                <option value="Rock">Rock</option>
+                <option value="Funk">Funk</option>
+                <!-- Adicione mais gêneros conforme necessário -->
+            </select>
+            <br>
+            <button class="btnrgstr" type="submit">Salvar Alterações</button>
+        </form>
+    </div>
+</body>
+
+</html>

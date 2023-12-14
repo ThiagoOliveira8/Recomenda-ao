@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Entrar</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1>Entrar</h1>
+        <form method="POST" action="/login">
+            <label for="name">Nome:</label>
+            <input class="inputglb" type="text" name="name" required>
+            <br>
+            <label for="password">Senha:</label>
+            <input class="inputglb" type="password" name="password" required>
+            <br>
+            <button class="btnlgn" type="submit">Entrar</button>
+
+        </form>
+        <p>Não tem uma conta? <a href="/register">Registrar-se</a></p>
+    </div>
+</body>
+
+</html>

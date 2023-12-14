@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendações de Filmes e Músicas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-5.3.2-dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <a class="imgbutton" href="edit_profile" style="justify-content:flex-start;"></a>
+    <div class="card-group" style="justify-content: center;">
+        <div class="card">
+            <h2>Recomendações de Filmes</h2>
+            {% for recommendation in movie_recommendations %}
+            <div class="card-body">
+                <h5 class="card-title" style="color: black;">{{ recommendation.description }}</h5>
+                <h6 class="card-text">{{ recommendation.title }}</h6>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h2>Recomendações de Músicas</h2>
+            {% for recommendation in song_recommendations %}
+                <h5 class="card-title">{{ recommendation.title }}</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">{{ recommendation.artist }}</h6>
+                <p class="card-text" style="color: black;">{{ recommendation.description }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>
+<!--
+    <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+
+-->

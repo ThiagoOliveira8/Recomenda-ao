@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Registrar</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1>Registrar</h1>
+        <form method="POST" action="/register">
+            <label for="name">Nome:</label>
+            <input class="inputglb" type="text" name="name" required>
+            <br>
+            <label for="password">Senha:</label>
+            <input class="inputglb" type="password" name="password" required>
+            <br>
+            <label for="film_genre">Gênero de filme favorito:</label>
+            <select class="inputglb" name="film_genre" required>
+                <option value="Action">Ação</option>
+                <option value="Comedy">Comédia</option>
+                <option value="Drama">Drama</option>
+                <!-- Add more genres as needed -->
+            </select>
+            <br>
+            <label for="music_genre">Gênero de música favorito:</label>
+            <select class="inputglb" name="music_genre" required>
+                <option value="Pop">Pop</option>
+                <option value="Rock">Rock</option>
+                <option value="Funk">Funk</option>
+                <!-- Add more genres as needed -->
+            </select>
+            <br>
+            <button class="btnrgstr" type="submit">Register</button>
+        </form>
+        <p>Já possui uma conta? <a href="/login">Entrar</a></p>
+    </div>
+</body>
+
+</html>
